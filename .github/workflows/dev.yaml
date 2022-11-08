@@ -37,6 +37,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Install npm dependencies
         run: npm install
+      - name: Install npm iac dependencies
+        working-directory: ./test-aws
+        run: npm install
       - name: Pulumi up
         uses: pulumi/actions@v3
         with:
