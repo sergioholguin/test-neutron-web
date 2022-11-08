@@ -1,0 +1,3 @@
+[submodule "test-aws"]
+	path = test-aws
+	url = git@github.com:sergioholguin/test-aws.git
