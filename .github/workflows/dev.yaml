@@ -43,22 +43,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Install npm dependencies
+      - name: Install app dependencies
         run: npm install
 
-      - name: Install npm iac dependencies
+      - name: Install Pulumi dependencies
         working-directory: ./test-aws
         run: npm install
-
-      - name: check secrets
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-        run: echo $AWS_REGION
 
       - name: Pulumi up
         uses: pulumi/actions@v3
         with:
-          work-dir: ./test-aws/
+          work-dir: ./test-aws
           command: up
           stack-name: dev
         env:
