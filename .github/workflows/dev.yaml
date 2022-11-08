@@ -51,6 +51,8 @@ jobs:
         run: npm install
 
       - name: check secrets
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
         run: echo $AWS_REGION
 
       - name: Pulumi up
