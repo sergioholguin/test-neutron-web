@@ -5,7 +5,7 @@ on:
       - Development
 jobs:
   build:
-    name: build dist
+    name: Build dist
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,7 +20,7 @@ jobs:
         run: npm run export
 
   update:
-    name: update infrastructure
+    name: Update infrastructure
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -40,7 +40,7 @@ jobs:
       - name: Pulumi up
         uses: pulumi/actions@v3
         with:
-          work-dir: ./test-aws
+          work-dir: ./test-aws/
           command: up
           stack-name: dev
         env:
