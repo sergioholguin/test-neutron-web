@@ -1,0 +1,36 @@
+@import '../Vars';
+
+.outer_container {
+  margin: 0 15px;
+  padding: 0 .4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $header-color;
+}
+
+.link {
+  color: $header-text-color;
+  font-weight: lighter;
+  text-decoration: none;
+  margin-right: 2rem;
+
+  &:hover {
+    color: $header-hovered-text-color;
+  }
+}
+
+.hamburger {
+  margin-right: 15px;
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .link_container {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

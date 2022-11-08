@@ -1,0 +1,61 @@
+@import '../Vars';
+
+.navbar_reference {
+  z-index: -2;
+  position: absolute;
+  width: 100%;
+  height: 134px;
+}
+
+.navbar {
+  z-index: 10;
+  top: -70px;
+  background-color: $header-color;
+  transition: background-color 0.8s ease-in-out, top 0.5s ease-in-out;
+
+  > div {
+    transition: background-color 0.8s ease-in-out;
+  }
+
+  > figure {
+    transition: margin 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+}
+
+.sticky_navbar {
+  z-index: 10;
+  background-color: $navbar-sticky-background-color;
+  border-bottom: solid white 1px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: top 0.5s ease-in-out;
+
+  > div {
+    background-color: $navbar-sticky-background-color;
+
+    > section {
+      > figure {
+        width: 160px;
+      }
+    }
+
+    p {
+      color: $navbar-sticky-text-color;
+    }
+
+    a {
+      color: $navbar-sticky-text-color;
+
+      &:hover {
+        color: $navbar-sticky-hovered-text-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 1133px) {
+  .navbar_reference {
+    height: 82px;
+  }
+}

@@ -1,0 +1,87 @@
+@import '../Vars';
+
+.active_sidebar {
+  z-index: 20;
+  display: block;
+  left: 0;
+  transition: left 0.3s ease 0s;
+}
+
+.sidebar {
+  background-color: $header-color;
+  width: 300px;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+}
+
+
+.inactive_sidebar {
+  z-index: 0;
+  left: -300px;
+  transition: left 0.3s ease 0s;
+}
+
+.sidebar_items {
+  margin: 0;
+  padding: 0;
+
+  > li {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.close_button_container {
+  height: 53px;
+  background-color: #F8F8F8;
+}
+
+.close_button_item {
+  width: 100%;
+  padding: 20px;
+
+  > span {
+    height: 100%;
+    font-weight: bolder;
+    font-size: .8rem;
+  }
+
+  &:hover {
+    color: #4CC2F4;
+  }
+}
+
+.close_button_icon {
+  margin: 0 6px 0 0;
+  width: 15px;
+  height: 15px;
+}
+
+.link_container {
+  height: 51px;
+}
+
+.link {
+  width: 100%;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  color: $header-text-color;
+
+  &:hover {
+    color: #4CC2F4;
+  }
+}
+

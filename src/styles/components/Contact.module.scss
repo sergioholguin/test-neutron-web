@@ -1,0 +1,63 @@
+@import '../Vars';
+
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 20px;
+  min-height: calc(100vh - 200px);
+}
+
+.contact_container {
+  border: 2px solid $color-form;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 60px 68px 40px;
+}
+
+.contact_container_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_container_form_input{
+  border: 2px solid $color-form;
+  color: $color-form;
+  font-family: $theme-font;
+  border-radius: 25px;
+  font-size: 15px;
+  height: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0px 20px;
+}
+
+.contact_container_form_message {
+  border: 2px solid $color-form;
+  color: $color-form;
+  font-family: $theme-font;
+  border-radius: 25px;
+  font-size: 15px;
+  resize: none;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 10px 20px;
+}
+
+.contact_container_form_button{
+  border: 2px solid $color-form;
+  color: $color-form;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $theme-font;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 15px;
+}
+

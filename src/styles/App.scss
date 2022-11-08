@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'Vars';
+
+body {
+  margin: 0;
+  font-family: $theme-font;
+  background: $main-color;
+}

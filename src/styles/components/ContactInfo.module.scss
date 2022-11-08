@@ -1,0 +1,71 @@
+@import '../Vars';
+
+.outer_container {
+  background-color: $contact-header-color;
+}
+
+.contact {
+  background-color: $contact-header-color;
+  margin: auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1110px;
+}
+
+.contact_phone {
+  color: gray;
+  font-size: 0.95rem ;
+  font-weight: lighter;
+}
+
+.contact_social {
+  display: flex;
+  align-items: center;
+}
+
+.contact_social_text {
+  color: black;
+  font-size: 0.85rem ;
+  font-weight: lighter;
+  padding-right: 10px;
+}
+
+.contact_social_links{
+  display: flex;
+  align-items: center;
+}
+
+.contact_social_icon_container {
+  background-color: #B5AAA2;
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+  padding: 2px 1px 0 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_social_icon {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .contact {
+    padding: 15px 0;
+    flex-direction: column;
+  }
+
+  .contact_phone {
+    margin-bottom: 2px;
+  }
+
+  .contact_social_icon_container {
+    padding: 2px 0 0 1px;
+  }
+}
