@@ -20,7 +20,7 @@ jobs:
         run: npm export
 
   update:
-    name: Update Infrastructure
+    name: update infrastructure
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
