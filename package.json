@@ -1,5 +1,5 @@
 {
-  "name": "neutron-web",
+  "name": "test-neutron-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "export": "npm run build && next export -o dist"
   },
   "engines" : {
-    "npm" : ">=8.9.2",
+    "npm" : ">=8.19.2",
     "node" : "19.0.0"
   },
   "dependencies": {
