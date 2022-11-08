@@ -50,6 +50,9 @@ jobs:
         working-directory: ./test-aws
         run: npm install
 
+      - name: check secrets
+        run: echo $AWS_REGION
+
       - name: Pulumi up
         uses: pulumi/actions@v3
         with:
