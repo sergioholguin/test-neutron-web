@@ -4,12 +4,29 @@ on:
     branches:
       - Development
 jobs:
-  preview:
-    name: Update
+  build:
+    name: build dist
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3.5
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v3.5.0
+        with:
+          node-version-file: package.json
+      - name: Install npm dependencies
+        run: npm install
+      - name: Build project
+        run: npm export
+
+  update:
+    name: Update Infrastructure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v3.5.0
         with:
           node-version-file: package.json
       - name: Configure AWS Credentials
@@ -18,9 +35,12 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-region: ${{ secrets.AWS_REGION }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - run: npm install
-      - uses: pulumi/actions@v3
+      - name: Install npm dependencies
+        run: npm install
+      - name: Pulumi up
+        uses: pulumi/actions@v3
         with:
+          working-directory: ./test-aws
           command: up
           stack-name: dev
         env:
