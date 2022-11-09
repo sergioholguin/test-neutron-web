@@ -36,7 +36,7 @@ jobs:
         working-directory: ./pulumi
         run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node pulumi.js
 
-      - name: verify structure
+      - name: Verify structure
         working-directory: ./pulumi
         run: ls -la
 
