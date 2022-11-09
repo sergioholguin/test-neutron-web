@@ -36,7 +36,7 @@ jobs:
         working-directory: ./pulumi
         run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node pulumi.js
 
-      - name: Verify structure
+      - name: Verify Pulumi infrastructure
         working-directory: ./pulumi
         run: ls -la
 
@@ -52,7 +52,7 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
-      - name: Pulumi stack output
+      - name: Pulumi stack outputs
         uses: pulumi/actions@v3
         with:
           work-dir: ./pulumi
