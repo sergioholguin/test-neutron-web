@@ -4,24 +4,6 @@ on:
     branches:
       - Development
 jobs:
-  build:
-    name: Build dist
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup node
-        uses: actions/setup-node@v3.5.1
-        with:
-          node-version-file: package.json
-
-      - name: Install npm dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run export
-
   update:
     name: Update infrastructure
     runs-on: ubuntu-latest
@@ -47,13 +29,20 @@ jobs:
         run: npm install
 
       - name: Install Pulumi dependencies
-        working-directory: ./test-aws
+        working-directory: ./pulumi
         run: npm install
+
+      - name: Create Pulumi.yaml and Stacks
+        working-directory: ./pulumi
+        run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node pulumi.js
+
+      - name: Build Next dist
+        run: npm run export
 
       - name: Pulumi up
         uses: pulumi/actions@v3
         with:
-          work-dir: ./test-aws
+          work-dir: ./pulumi
           command: up
           stack-name: dev
         env:

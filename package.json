@@ -9,9 +9,9 @@
     "lint": "next lint",
     "export": "npm run build && next export -o dist"
   },
-  "engines" : {
-    "npm" : ">=8.19.2",
-    "node" : "19.0.0"
+  "engines": {
+    "npm": ">=8.19.2",
+    "node": "19.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
