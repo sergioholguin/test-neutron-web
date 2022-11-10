@@ -44,7 +44,7 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
-      - name: Select dev stack
+      - name: Select Dev stack
         working-directory: ./pulumi
         run: pulumi stack select dev
         env:
