@@ -32,19 +32,19 @@ jobs:
         working-directory: ./pulumi
         run: npm install
 
-      - name: Create Pulumi.yaml and Stacks
+      - name: Create Pulumi YAML files and initialize stacks
         working-directory: ./pulumi
-        run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node pulumi.js
+        run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node initialize.js
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
       - name: Verify Pulumi infrastructure
         working-directory: ./pulumi
-        run: pulumi stack ls -s dev
+        run: pulumi stack ls
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
-      - name: Select Dev stack
+      - name: Select dev stack
         working-directory: ./pulumi
         run: pulumi stack select dev
         env:
