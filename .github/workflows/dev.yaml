@@ -37,11 +37,8 @@ jobs:
         run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node pulumi.js
 
       - name: Verify Pulumi infrastructure
-        uses: pulumi/actions@v3
-        with:
-          work-dir: ./pulumi
-          command: stack ls
-          stack-name: dev
+        working-directory: ./pulumi
+        run: pulumi stack ls -s dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
