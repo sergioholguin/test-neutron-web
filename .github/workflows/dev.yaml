@@ -34,8 +34,9 @@ jobs:
 
       - name: Create Pulumi YAML files and initialize stacks
         working-directory: ./pulumi
-        run: PARAMETERS=${{ secrets.PULUMI_PARAMETERS }} node initialize.js
+        run: node initialize.js
         env:
+          PARAMETERS: ${{ secrets.PULUMI_PARAMETERS }}
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
       - name: Verify Pulumi infrastructure
