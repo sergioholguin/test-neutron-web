@@ -38,7 +38,7 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
-      - name: Verify Pulumi Infrastructure
+      - name: Verify Pulumi infrastructure
         working-directory: ./pulumi
         run: pulumi stack ls -s dev
         env:
