@@ -10,11 +10,12 @@ jobs:
     steps:
       - name: Checkout project repository
         uses: actions/checkout@v2
+        with:
+          submodules: 'true'
 
-      - name: Checkout pulumi-aws-cloudfront-submodule
-        run: |
-          git submodule add git@github.com:sergioholguin/pulumi-aws-cloudfront.git pulumi
-          git checkout v1.0.0 
+      - name: Choose pulumi-aws-cloudfront-submodule version
+        working-directory: ./pulumi
+        run: git checkout v1.0.0
 
       - name: Setup node
         uses: actions/setup-node@v3.5.1
