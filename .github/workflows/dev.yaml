@@ -67,6 +67,8 @@ jobs:
           command: up
           stack-name: dev
           cloud-url: ${{ secrets.PULUMI_BACKEND_URL }}
+        env:
+          PULUMI_BACKEND_URL: ${{ secrets.PULUMI_BACKEND_URL }}
 
       - name: Pulumi stack outputs
         working-directory: ./pulumi
