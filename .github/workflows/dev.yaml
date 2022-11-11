@@ -13,7 +13,7 @@ jobs:
 
       - name: Checkout pulumi-aws-cloudfront-submodule
         run: |
-          git submodule add git@github.com:promitia/pulumi-aws-cloudfront.git pulumi
+          git submodule add git@github.com:sergioholguin/pulumi-aws-cloudfront.git pulumi
           git checkout v1.0.0 
 
       - name: Setup node
