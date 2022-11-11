@@ -1,3 +1,0 @@
-[submodule "test-aws"]
-	path = pulumi
-	url = git@github.com:sergioholguin/test-aws.git
