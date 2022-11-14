@@ -8,14 +8,16 @@ jobs:
     name: Update infrastructure
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout project repository and submodules
+      - name: Checkout project repository
+        uses: actions/checkout@v2
+
+      - name: Checkout pulumi-aws-cloudfront
         uses: actions/checkout@v2
         with:
-          submodules: 'true'
-
-#      - name: Choose pulumi-aws-cloudfront-submodule version
-#        working-directory: ./pulumi
-#        run: git checkout v1.0.0
+          repository: sergioholguin/pulumi-aws-cloudfront
+          ref: v1.0.0
+          token: ${{ secrets.GH_REPOSITORY_TOKEN }} # `GH_PAT` is a secret that contains your PAT
+          path: pulumi
 
       - name: Setup node
         uses: actions/setup-node@v3.5.1
