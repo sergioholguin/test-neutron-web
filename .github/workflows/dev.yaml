@@ -68,6 +68,7 @@ jobs:
           command: up
           stack-name: dev
           cloud-url: ${{ secrets.PULUMI_BACKEND_URL }}
+          secrets-provider: passphrase
         env:
           PULUMI_BACKEND_URL: ${{ secrets.PULUMI_BACKEND_URL }}
           PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
