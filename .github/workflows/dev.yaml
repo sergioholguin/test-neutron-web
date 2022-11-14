@@ -60,7 +60,7 @@ jobs:
       - name: Build Next dist
         run: npm run export
 
-      - name: Pulumi up
+      - name: pulumi up
         uses: pulumi/actions@v3
         with:
           work-dir: ./pulumi
