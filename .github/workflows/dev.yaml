@@ -13,9 +13,9 @@ jobs:
         with:
           submodules: 'true'
 
-      - name: Choose pulumi-aws-cloudfront-submodule version
-        working-directory: ./pulumi
-        run: git checkout v1.0.0
+#      - name: Choose pulumi-aws-cloudfront-submodule version
+#        working-directory: ./pulumi
+#        run: git checkout v1.0.0
 
       - name: Setup node
         uses: actions/setup-node@v3.5.1
@@ -60,7 +60,7 @@ jobs:
       - name: Build Next dist
         run: npm run export
 
-      - name: pulumi up
+      - name: Pulumi up
         uses: pulumi/actions@v3
         with:
           work-dir: ./pulumi
