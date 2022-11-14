@@ -42,6 +42,7 @@ jobs:
         env:
           PULUMI_PARAMETERS: ${{ secrets.PULUMI_PARAMETERS }}
           PULUMI_BACKEND_URL: ${{ secrets.PULUMI_BACKEND_URL }}
+          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
 
       - name: Verify Pulumi infrastructure
         working-directory: ./pulumi
@@ -60,11 +61,11 @@ jobs:
       - name: Build Next dist
         run: npm run export
 
-      - name: Pulumi Refresh
+      - name: Pulumi up
         uses: pulumi/actions@v3
         with:
           work-dir: ./pulumi
-          command: refresh
+          command: up
           stack-name: dev
           cloud-url: ${{ secrets.PULUMI_BACKEND_URL }}
         env:
