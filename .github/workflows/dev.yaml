@@ -60,11 +60,11 @@ jobs:
       - name: Build Next dist
         run: npm run export
 
-      - name: Pulumi up
+      - name: Pulumi Refresh
         uses: pulumi/actions@v3
         with:
           work-dir: ./pulumi
-          command: up
+          command: refresh
           stack-name: dev
           cloud-url: ${{ secrets.PULUMI_BACKEND_URL }}
         env:
